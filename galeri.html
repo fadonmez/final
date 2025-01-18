@@ -8,6 +8,14 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="bg-dark text-light">
@@ -58,16 +66,56 @@
     </div>
 
     <main class="container mt-5 pt-5">
-      <h1 class="text-center mb-5">Galeri</h1>
+      <h1 class="text-center mb-4">Galeri</h1>
 
-      <div class="row g-4">
-        <div class="col-md-4 col-sm-6">
-          <div class="card bg-dark border-0">
-            <img
-              src="https://picsum.photos/seed/coffee1/400/300"
-              alt="Kahve"
-              class="card-img-top rounded"
-            />
+      <!-- Filter Buttons -->
+      <div class="text-center mb-4">
+        <div class="btn-group filter-buttons" role="group">
+          <button
+            type="button"
+            class="btn btn-outline-primary active"
+            data-filter="all"
+          >
+            Tümü
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            data-filter="kahve"
+          >
+            Kahveler
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            data-filter="ekipman"
+          >
+            Ekipmanlar
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            data-filter="mekan"
+          >
+            Mekan
+          </button>
+        </div>
+      </div>
+
+      <div class="row g-4" id="gallery">
+        <div class="col-md-4 col-sm-6 gallery-item" data-category="kahve">
+          <div class="card bg-dark border-0 h-100">
+            <a
+              href="https://picsum.photos/seed/coffee1/800/600"
+              data-lightbox="gallery"
+              data-title="Espresso Hazırlığı"
+            >
+              <img
+                src="https://picsum.photos/seed/coffee1/400/300"
+                alt="Kahve"
+                class="card-img-top rounded"
+              />
+            </a>
             <div class="card-body px-0">
               <h5 class="card-title">Espresso Hazırlığı</h5>
               <p class="card-text">
@@ -78,13 +126,19 @@
           </div>
         </div>
 
-        <div class="col-md-4 col-sm-6">
-          <div class="card bg-dark border-0">
-            <img
-              src="https://picsum.photos/seed/coffee2/400/300"
-              alt="Kahve Çekirdekleri"
-              class="card-img-top rounded"
-            />
+        <div class="col-md-4 col-sm-6 gallery-item" data-category="kahve">
+          <div class="card bg-dark border-0 h-100">
+            <a
+              href="https://picsum.photos/seed/coffee2/800/600"
+              data-lightbox="gallery"
+              data-title="Kahve Çekirdekleri"
+            >
+              <img
+                src="https://picsum.photos/seed/coffee2/400/300"
+                alt="Kahve Çekirdekleri"
+                class="card-img-top rounded"
+              />
+            </a>
             <div class="card-body px-0">
               <h5 class="card-title">Kahve Çekirdekleri</h5>
               <p class="card-text">
@@ -94,13 +148,19 @@
           </div>
         </div>
 
-        <div class="col-md-4 col-sm-6">
-          <div class="card bg-dark border-0">
-            <img
-              src="https://picsum.photos/seed/coffee3/400/300"
-              alt="Latte Art"
-              class="card-img-top rounded"
-            />
+        <div class="col-md-4 col-sm-6 gallery-item" data-category="kahve">
+          <div class="card bg-dark border-0 h-100">
+            <a
+              href="https://picsum.photos/seed/coffee3/800/600"
+              data-lightbox="gallery"
+              data-title="Latte Art"
+            >
+              <img
+                src="https://picsum.photos/seed/coffee3/400/300"
+                alt="Latte Art"
+                class="card-img-top rounded"
+              />
+            </a>
             <div class="card-body px-0">
               <h5 class="card-title">Latte Art</h5>
               <p class="card-text">
@@ -110,13 +170,19 @@
           </div>
         </div>
 
-        <div class="col-md-4 col-sm-6">
-          <div class="card bg-dark border-0">
-            <img
-              src="https://picsum.photos/seed/coffee4/400/300"
-              alt="Kahve Makinesi"
-              class="card-img-top rounded"
-            />
+        <div class="col-md-4 col-sm-6 gallery-item" data-category="ekipman">
+          <div class="card bg-dark border-0 h-100">
+            <a
+              href="https://picsum.photos/seed/coffee4/800/600"
+              data-lightbox="gallery"
+              data-title="Profesyonel Ekipman"
+            >
+              <img
+                src="https://picsum.photos/seed/coffee4/400/300"
+                alt="Kahve Makinesi"
+                class="card-img-top rounded"
+              />
+            </a>
             <div class="card-body px-0">
               <h5 class="card-title">Profesyonel Ekipman</h5>
               <p class="card-text">
@@ -127,13 +193,19 @@
           </div>
         </div>
 
-        <div class="col-md-4 col-sm-6">
-          <div class="card bg-dark border-0">
-            <img
-              src="https://picsum.photos/seed/coffee5/400/300"
-              alt="Kahve Servisi"
-              class="card-img-top rounded"
-            />
+        <div class="col-md-4 col-sm-6 gallery-item" data-category="kahve">
+          <div class="card bg-dark border-0 h-100">
+            <a
+              href="https://picsum.photos/seed/coffee5/800/600"
+              data-lightbox="gallery"
+              data-title="Özel Sunumlar"
+            >
+              <img
+                src="https://picsum.photos/seed/coffee5/400/300"
+                alt="Kahve Servisi"
+                class="card-img-top rounded"
+              />
+            </a>
             <div class="card-body px-0">
               <h5 class="card-title">Özel Sunumlar</h5>
               <p class="card-text">
@@ -143,13 +215,19 @@
           </div>
         </div>
 
-        <div class="col-md-4 col-sm-6">
-          <div class="card bg-dark border-0">
-            <img
-              src="https://picsum.photos/seed/coffee6/400/300"
-              alt="Kahve Dükkanı"
-              class="card-img-top rounded"
-            />
+        <div class="col-md-4 col-sm-6 gallery-item" data-category="mekan">
+          <div class="card bg-dark border-0 h-100">
+            <a
+              href="https://picsum.photos/seed/coffee6/800/600"
+              data-lightbox="gallery"
+              data-title="Kahve Dükkanımız"
+            >
+              <img
+                src="https://picsum.photos/seed/coffee6/400/300"
+                alt="Kahve Dükkanı"
+                class="card-img-top rounded"
+              />
+            </a>
             <div class="card-body px-0">
               <h5 class="card-title">Kahve Dükkanımız</h5>
               <p class="card-text">
@@ -162,6 +240,7 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

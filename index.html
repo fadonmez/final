@@ -61,31 +61,144 @@
     </div>
 
     <main class="container mt-5 pt-5">
-      <h1 class="text-center mb-4">Kahve Dünyasına Hoş Geldiniz</h1>
-      <div class="row">
-        <div class="col-md-6 mb-4">
-          <img
-            src="https://picsum.photos/seed/coffee1/600/400"
-            alt="Kahve"
-            class="img-fluid rounded"
-          />
+      <!-- Hero Slider -->
+      <div id="heroSlider" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#heroSlider"
+            data-bs-slide-to="0"
+            class="active"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroSlider"
+            data-bs-slide-to="1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroSlider"
+            data-bs-slide-to="2"
+          ></button>
         </div>
-        <div class="col-md-6 mb-4">
-          <h2>En İyi Kahve Deneyimi</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-          <p>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
-          </p>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="https://picsum.photos/seed/coffee-hero1/1920/800"
+              class="d-block w-100"
+              alt="Kahve"
+            />
+            <div class="carousel-caption">
+              <h2 class="display-4 fw-bold">Kahve Tutkunlarının Adresi</h2>
+              <p class="lead">
+                En kaliteli kahve çekirdekleri, uzman baristalar
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://picsum.photos/seed/coffee-hero2/1920/800"
+              class="d-block w-100"
+              alt="Kahve"
+            />
+            <div class="carousel-caption">
+              <h2 class="display-4 fw-bold">Eşsiz Kahve Deneyimi</h2>
+              <p class="lead">Her fincan kahvede ayrı bir hikaye</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://picsum.photos/seed/coffee-hero3/1920/800"
+              class="d-block w-100"
+              alt="Kahve"
+            />
+            <div class="carousel-caption">
+              <h2 class="display-4 fw-bold">Özel Kahve Çeşitleri</h2>
+              <p class="lead">Dünya'nın dört bir yanından seçkin kahveler</p>
+            </div>
+          </div>
         </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#heroSlider"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#heroSlider"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
       </div>
+
+      <!-- Statistics Section -->
+      <section class="stats-section py-5">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-3 mb-4">
+              <div class="stat-item">
+                <i class="fas fa-coffee fa-3x mb-3"></i>
+                <h3 class="counter" data-target="150">0</h3>
+                <p>Kahve Çeşidi</p>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="stat-item">
+                <i class="fas fa-users fa-3x mb-3"></i>
+                <h3 class="counter" data-target="10000">0</h3>
+                <p>Mutlu Müşteri</p>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="stat-item">
+                <i class="fas fa-store fa-3x mb-3"></i>
+                <h3 class="counter" data-target="12">0</h3>
+                <p>Şube</p>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="stat-item">
+                <i class="fas fa-award fa-3x mb-3"></i>
+                <h3 class="counter" data-target="15">0</h3>
+                <p>Yıllık Deneyim</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Welcome Section -->
+      <section class="container mt-5">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-4">
+            <img
+              src="https://picsum.photos/seed/coffee1/600/400"
+              alt="Kahve"
+              class="img-fluid rounded"
+            />
+          </div>
+          <div class="col-md-6 mb-4">
+            <h2>En İyi Kahve Deneyimi</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <p>
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+              cupidatat non proident, sunt in culpa qui officia deserunt mollit
+              anim id est laborum.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
