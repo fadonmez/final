@@ -71,14 +71,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  const contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const name = document.getElementById("name").value.trim();
+      const subject = document.getElementById("subject").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!email || !name || !subject || !message) {
+        showAlert(
+          "Lütfen tüm alanları doldurunuz.",
+          "danger",
+          "contactAlertContainer"
+        );
+        return;
+      }
+
+      showAlert(
+        `Sayın ${name}, mesajınız başarıyla gönderildi! En kısa sürede ${email} adresinden size ulaşacağız.`,
+        "success",
+        "contactAlertContainer"
+      );
+
+      this.reset();
+    });
+  }
+
   const addCoffeeForm = document.getElementById("addCoffeeForm");
   const saveCoffeeBtn = document.getElementById("saveCoffeeBtn");
-  const addCoffeeModal = new bootstrap.Modal(
-    document.getElementById("addCoffeeModal")
-  );
-  const alertContainer = document.getElementById("alertContainer");
-
-  loadSavedCoffees();
+  const addCoffeeModal = document.getElementById("addCoffeeModal")
+    ? new bootstrap.Modal(document.getElementById("addCoffeeModal"))
+    : null;
 
   if (saveCoffeeBtn) {
     saveCoffeeBtn.addEventListener("click", () => {
@@ -89,11 +115,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const category = document.getElementById("coffeeCategory").value;
 
       if (!name || !description || !category) {
-        showAlert("Lütfen tüm alanları doldurun!", "danger");
+        showAlert("Lütfen tüm alanları doldurun!", "danger", "alertContainer");
         return;
       }
-      const newCoffee = createCoffeeCard(name, description);
 
+      const newCoffee = createCoffeeCard(name, description);
       const categoryContainer =
         category === "espresso"
           ? document.querySelector(".col-md-6:first-child")
@@ -101,40 +127,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (categoryContainer) {
         categoryContainer.appendChild(newCoffee);
-
-        saveCoffee({
-          name,
-          description,
-          category,
-        });
-
-        showAlert("Kahve başarıyla eklendi!", "success");
+        saveCoffee({ name, description, category });
+        showAlert("Kahve başarıyla eklendi!", "success", "alertContainer");
         addCoffeeForm.reset();
         addCoffeeModal.hide();
       }
     });
   }
 
-  function saveCoffee(coffee) {
-    let coffees = JSON.parse(localStorage.getItem("coffees") || "[]");
-    coffees.push(coffee);
-    localStorage.setItem("coffees", JSON.stringify(coffees));
-  }
+  function showAlert(message, type, containerId) {
+    const alertContainer = document.getElementById(containerId);
+    if (!alertContainer) return;
 
-  function loadSavedCoffees() {
-    const coffees = JSON.parse(localStorage.getItem("coffees") || "[]");
+    const alert = document.createElement("div");
+    alert.className = `alert alert-${type} alert-dismissible fade show`;
+    alert.innerHTML = `
+      ${message}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    `;
 
-    coffees.forEach((coffee) => {
-      const newCoffee = createCoffeeCard(coffee.name, coffee.description);
-      const categoryContainer =
-        coffee.category === "espresso"
-          ? document.querySelector(".col-md-6:first-child")
-          : document.querySelector(".col-md-6:last-child");
+    alertContainer.innerHTML = "";
+    alertContainer.appendChild(alert);
 
-      if (categoryContainer) {
-        categoryContainer.appendChild(newCoffee);
-      }
-    });
+    setTimeout(() => {
+      alert.classList.remove("show");
+      setTimeout(() => alert.remove(), 150);
+    }, 5000);
   }
 
   function createCoffeeCard(name, description) {
@@ -154,20 +172,24 @@ document.addEventListener("DOMContentLoaded", () => {
     return cardWrapper;
   }
 
-  function showAlert(message, type) {
-    const alert = document.createElement("div");
-    alert.className = `alert alert-${type} alert-dismissible fade show`;
-    alert.innerHTML = `
-      ${message}
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    `;
+  function saveCoffee(coffee) {
+    let coffees = JSON.parse(localStorage.getItem("coffees") || "[]");
+    coffees.push(coffee);
+    localStorage.setItem("coffees", JSON.stringify(coffees));
+  }
 
-    alertContainer.innerHTML = "";
-    alertContainer.appendChild(alert);
+  if (currentPage === "menu.html") {
+    const coffees = JSON.parse(localStorage.getItem("coffees") || "[]");
+    coffees.forEach((coffee) => {
+      const newCoffee = createCoffeeCard(coffee.name, coffee.description);
+      const categoryContainer =
+        coffee.category === "espresso"
+          ? document.querySelector(".col-md-6:first-child")
+          : document.querySelector(".col-md-6:last-child");
 
-    setTimeout(() => {
-      alert.classList.remove("show");
-      setTimeout(() => alert.remove(), 150);
-    }, 3000);
+      if (categoryContainer) {
+        categoryContainer.appendChild(newCoffee);
+      }
+    });
   }
 });
