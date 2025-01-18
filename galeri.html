@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeri - Kahve Dünyası</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Kahve Dünyası</a>
+        <button
+          class="navbar-toggler border-0 p-0"
+          type="button"
+          id="hamburgerBtn"
+        >
+          <div class="hamburger-icon">
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Ana Sayfa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">Menü</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="galeri.html">Galeri</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="iletisim.html">İletişim</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="close-btn" id="closeBtn">&times;</button>
+      <div class="mobile-menu-content">
+        <a href="index.html" class="mobile-link">Ana Sayfa</a>
+        <a href="menu.html" class="mobile-link">Menü</a>
+        <a href="hakkimizda.html" class="mobile-link">Hakkımızda</a>
+        <a href="galeri.html" class="mobile-link active">Galeri</a>
+        <a href="iletisim.html" class="mobile-link">İletişim</a>
+      </div>
+    </div>
+
+    <main class="container mt-5 pt-5">
+      <h1 class="text-center mb-5">Galeri</h1>
+
+      <div class="row g-4">
+        <div class="col-md-4 col-sm-6">
+          <div class="card bg-dark border-0">
+            <img
+              src="https://picsum.photos/seed/coffee1/400/300"
+              alt="Kahve"
+              class="card-img-top rounded"
+            />
+            <div class="card-body px-0">
+              <h5 class="card-title">Espresso Hazırlığı</h5>
+              <p class="card-text">
+                Taze çekilmiş kahve çekirdekleriyle hazırlanan muhteşem
+                espresso.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="card bg-dark border-0">
+            <img
+              src="https://picsum.photos/seed/coffee2/400/300"
+              alt="Kahve Çekirdekleri"
+              class="card-img-top rounded"
+            />
+            <div class="card-body px-0">
+              <h5 class="card-title">Kahve Çekirdekleri</h5>
+              <p class="card-text">
+                Özenle seçilmiş premium kahve çekirdekleri.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="card bg-dark border-0">
+            <img
+              src="https://picsum.photos/seed/coffee3/400/300"
+              alt="Latte Art"
+              class="card-img-top rounded"
+            />
+            <div class="card-body px-0">
+              <h5 class="card-title">Latte Art</h5>
+              <p class="card-text">
+                Baristalarımızın özenle hazırladığı sanatsal sunumlar.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="card bg-dark border-0">
+            <img
+              src="https://picsum.photos/seed/coffee4/400/300"
+              alt="Kahve Makinesi"
+              class="card-img-top rounded"
+            />
+            <div class="card-body px-0">
+              <h5 class="card-title">Profesyonel Ekipman</h5>
+              <p class="card-text">
+                En kaliteli kahveyi hazırlamak için kullandığımız profesyonel
+                ekipmanlar.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="card bg-dark border-0">
+            <img
+              src="https://picsum.photos/seed/coffee5/400/300"
+              alt="Kahve Servisi"
+              class="card-img-top rounded"
+            />
+            <div class="card-body px-0">
+              <h5 class="card-title">Özel Sunumlar</h5>
+              <p class="card-text">
+                Her detayı düşünülmüş özel kahve sunumlarımız.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="card bg-dark border-0">
+            <img
+              src="https://picsum.photos/seed/coffee6/400/300"
+              alt="Kahve Dükkanı"
+              class="card-img-top rounded"
+            />
+            <div class="card-body px-0">
+              <h5 class="card-title">Kahve Dükkanımız</h5>
+              <p class="card-text">
+                Sıcak ve samimi atmosferiyle kahve dükkanımız.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
