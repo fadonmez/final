@@ -373,9 +373,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Counter Animation
   const counters = document.querySelectorAll(".counter");
-  const speed = 200; // Animasyon hızı (ms)
+  const speed = 200;
 
   const animateCounter = (counter) => {
     const target = +counter.getAttribute("data-target");
@@ -396,7 +395,6 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCount();
   };
 
-  // Intersection Observer for counter animation
   const observerOptions = {
     root: null,
     threshold: 0.1,
@@ -417,16 +415,13 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(counter);
   });
 
-  // Gallery Functionality
   const filterButtons = document.querySelectorAll(".filter-buttons .btn");
   const galleryItems = document.querySelectorAll(".gallery-item");
 
   if (filterButtons.length > 0) {
     filterButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        // Remove active class from all buttons
         filterButtons.forEach((btn) => btn.classList.remove("active"));
-        // Add active class to clicked button
         button.classList.add("active");
 
         const filter = button.getAttribute("data-filter");
@@ -444,7 +439,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Initialize Lightbox
   if (typeof lightbox !== "undefined") {
     lightbox.option({
       resizeDuration: 200,
@@ -454,7 +448,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Timeline Animation
   const timelineItems = document.querySelectorAll(".timeline-item");
   const timelineObserver = new IntersectionObserver(
     (entries) => {
@@ -474,7 +467,6 @@ document.addEventListener("DOMContentLoaded", () => {
     timelineObserver.observe(item);
   });
 
-  // Skill Bars Animation
   const skillBars = document.querySelectorAll(".skill-bar");
   const skillBarObserver = new IntersectionObserver(
     (entries) => {
